@@ -1,0 +1,93 @@
+---
+layout: layouts/base.njk
+title: "Contact — Lellex"
+description: "Parlons de votre projet web. Alexandra Janin, développeuse web indépendante en Dordogne, disponible pour vos projets de sites, applications et accompagnement IA."
+ogTitle: "Contact — Lellex"
+ogDescription: "Décrivez-moi votre projet — je vous réponds sous 48h."
+---
+
+<section id="contact-intro">
+  <div class="section-inner">
+    <p class="section-label">travaillons ensemble</p>
+    <div class="dispo-badge">Disponible</div>
+    <h1 class="section-title">Parlons de votre projet</h1>
+    <p class="contact-page-sub">
+      Pas besoin d'avoir tout cadré — décrivez-moi votre idée, même floue. Je vous réponds sous 48h.
+    </p>
+  </div>
+</section>
+
+<section id="contact-form-section">
+  <div class="section-inner contact-layout">
+
+    <form
+      class="contact-form"
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      action="/contact/merci/">
+      <input type="hidden" name="form-name" value="contact"/>
+      <p hidden><label>Ne pas remplir : <input name="bot-field"/></label></p>
+
+      <div class="form-row form-row--2col">
+        <div class="form-field">
+          <label class="form-label" for="prenom">Prénom <span aria-hidden="true">*</span></label>
+          <input class="form-input" type="text" id="prenom" name="prenom" required autocomplete="given-name"/>
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="email">Email <span aria-hidden="true">*</span></label>
+          <input class="form-input" type="email" id="email" name="email" required autocomplete="email"/>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="type-projet">Type de projet</label>
+        <select class="form-input form-select" id="type-projet" name="type-projet">
+          <option value="">— Choisir —</option>
+          <option value="ia">Accompagnement IA / vibe coding</option>
+          <option value="mise-en-ligne">Mise en ligne accompagnée</option>
+          <option value="page-simple">Page web simple</option>
+          <option value="site-multi-pages">Site web multi-pages</option>
+          <option value="application">Application / développement sur mesure</option>
+          <option value="autre">Autre / je ne sais pas encore</option>
+        </select>
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="message">Décrivez votre projet <span aria-hidden="true">*</span></label>
+        <textarea
+          class="form-input form-textarea"
+          id="message"
+          name="message"
+          rows="6"
+          required
+          placeholder="Qui êtes-vous, quel est votre besoin, avez-vous une deadline ?"></textarea>
+      </div>
+
+      <button type="submit" class="btn-primary">Envoyer →</button>
+    </form>
+
+    <aside class="contact-aside">
+      <div class="contact-aside-block">
+        <p class="contact-aside-label">Réponse</p>
+        <p>Sous 48h en semaine.</p>
+      </div>
+      <div class="contact-aside-block">
+        <p class="contact-aside-label">Disponibilité</p>
+        <p>Disponible pour de nouveaux projets en Dordogne et à distance.</p>
+      </div>
+      <div class="contact-aside-block">
+        <p class="contact-aside-label">Préférez les réseaux ?</p>
+        <a
+          href="https://www.linkedin.com/in/alexandra-janin-b3a99626"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact-aside-link">
+          LinkedIn →
+        </a>
+      </div>
+    </aside>
+
+  </div>
+</section>
