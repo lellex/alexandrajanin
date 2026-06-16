@@ -10,7 +10,7 @@
   --violet-mid: #6c35a7;
   --violet-light: #ede6f7;
   --cream: #fffcf4;
-  --cream-dark: #dfd4b0;
+  --cream-dark: #fff3db;
   --gold: #c98f00;
   --gold-light: #fff3cc;
   --forest: #7c5522;
@@ -93,36 +93,33 @@ nav {
   color: var(--violet-deep);
   text-decoration: none;
   position: relative;
-  transition: color 0.2s;
-}
-
-.nav-links a::before,
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -6px;
-  height: 2px;
-  width: 0;
-  transition: width 0.22s ease;
 }
 
 .nav-links a::before {
+  content: '';
+  position: absolute;
   left: 0;
-  background: #380075;
-}
-
-.nav-links a::after {
   right: 0;
-  background: #FFB700;
+  bottom: -4px;
+  height: 1px;
+  background: var(--violet-deep);
+  transform-origin: 50% 100%;
+  transition: clip-path 0.3s, transform 0.3s cubic-bezier(0.2, 1, 0.8, 1);
+  clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 100% 100%, 100% 0%);
 }
 
-.nav-links a:hover {
-  color: var(--violet-deep);
+.nav-links a:hover::before {
+  transform: translate3d(0, 2px, 0) scale3d(1.08, 3, 1);
+  clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0, 50% 0, 50% 100%, 50% 100%, 0 100%, 100% 100%, 100% 0%);
 }
 
-.nav-links a:hover::before,
-.nav-links a:hover::after {
-  width: 50%;
+.nav-links a span {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.2, 1, 0.8, 1);
+}
+
+.nav-links a:hover span {
+  transform: translate3d(0, -2px, 0);
 }
 
 /* HERO */
@@ -233,11 +230,8 @@ nav {
 }
 
 .btn-primary {
-  background: linear-gradient(to right, var(--white) 50%, var(--violet-deep) 50%);
-  background-size: 200% 100%;
-  background-position: right center;
-  color: var(--cream);
-  padding: 0.7rem 1.5rem;
+  background: var(--violet-deep);
+  padding: 0;
   border: none;
   border-radius: 6px;
   font-family: var(--font-mono);
@@ -246,20 +240,27 @@ nav {
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
-  transition: background-position 0.3s ease, color 0.3s ease;
 }
 
-.btn-primary:hover {
-  background-position: left center;
-  color: var(--violet-deep);
-}
-
-
-.btn-outline {
-  background: transparent;
+.btn-primary span {
+  display: block;
+  background: var(--cream);
   color: var(--violet-deep);
   padding: 0.7rem 1.5rem;
-  border: 1px solid rgba(56, 0, 117, 0.25);
+  border: 2px solid var(--violet-deep);
+  border-radius: 6px;
+  transform: translate3d(-4px, -4px, 0);
+  transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+}
+
+.btn-primary:hover span {
+  transform: translate3d(-7px, -7px, 0);
+}
+
+.btn-outline {
+  background: var(--cream-dark);
+  padding: 0;
+  border: none;
   border-radius: 6px;
   font-family: var(--font-mono);
   font-size: 1rem;
@@ -267,11 +268,21 @@ nav {
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
-  transition: border-color 0.2s;
 }
 
-.btn-outline:hover {
-  border-color: var(--violet-deep);
+.btn-outline span {
+  display: block;
+  background: transparent;
+  color: var(--violet-deep);
+  padding: 0.7rem 1.5rem;
+  border: 2px solid var(--violet-deep);
+  border-radius: 6px;
+  transform: translate3d(-4px, -4px, 0);
+  transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+}
+
+.btn-outline:hover span {
+  transform: translate3d(-7px, -7px, 0);
 }
 
 @keyframes blink {
@@ -855,6 +866,27 @@ section {
   flex-shrink: 0;
 }
 
+#offres-ia .offre-card {
+  overflow: visible;
+}
+
+.nouveau-badge {
+  position: absolute;
+  top: -0.65rem;
+  right: 0.9rem;
+  transform: rotate(2.5deg);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #1a1820;
+  background: #FFB700;
+  border-radius: 4px;
+  padding: 4px 9px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
 @keyframes dispo-pulse {
 
   0%,
@@ -1280,6 +1312,7 @@ footer a:hover {
 
 .svc-tile--ia {
   border-color: var(--violet-deep);
+  overflow: visible;
 }
 
 .svc-tile--ia::before {
