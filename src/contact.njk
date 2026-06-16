@@ -1,8 +1,8 @@
 ---
 layout: layouts/base.njk
-title: "Contact — Lellex"
+title: "Contact — Alexandra Janin"
 description: "Parlons de votre projet web. Alexandra Janin, développeuse web indépendante en Dordogne, disponible pour vos projets de sites, applications et accompagnement IA."
-ogTitle: "Contact — Lellex"
+ogTitle: "Contact — Alexandra Janin"
 ogDescription: "Décrivez-moi votre projet — je vous réponds sous 48h."
 ---
 
@@ -16,10 +16,8 @@ ogDescription: "Décrivez-moi votre projet — je vous réponds sous 48h."
     </p>
   </div>
 </section>
-
 <section id="contact-form-section">
   <div class="section-inner contact-layout">
-
     <form
       class="contact-form"
       name="contact"
@@ -28,19 +26,23 @@ ogDescription: "Décrivez-moi votre projet — je vous réponds sous 48h."
       netlify-honeypot="bot-field"
       action="/contact/merci/">
       <input type="hidden" name="form-name" value="contact"/>
-      <p hidden><label>Ne pas remplir : <input name="bot-field"/></label></p>
-
+      <p hidden>
+        <label>Ne pas remplir : <input name="bot-field"/></label>
+      </p>
       <div class="form-row form-row--2col">
         <div class="form-field">
-          <label class="form-label" for="prenom">Prénom <span aria-hidden="true">*</span></label>
+          <label class="form-label" for="prenom">Prénom
+            <span aria-hidden="true">*</span>
+          </label>
           <input class="form-input" type="text" id="prenom" name="prenom" required autocomplete="given-name"/>
         </div>
         <div class="form-field">
-          <label class="form-label" for="email">Email <span aria-hidden="true">*</span></label>
+          <label class="form-label" for="email">Email
+            <span aria-hidden="true">*</span>
+          </label>
           <input class="form-input" type="email" id="email" name="email" required autocomplete="email"/>
         </div>
       </div>
-
       <div class="form-field">
         <label class="form-label" for="type-projet">Type de projet</label>
         <select class="form-input form-select" id="type-projet" name="type-projet">
@@ -53,9 +55,10 @@ ogDescription: "Décrivez-moi votre projet — je vous réponds sous 48h."
           <option value="autre">Autre / je ne sais pas encore</option>
         </select>
       </div>
-
       <div class="form-field">
-        <label class="form-label" for="message">Décrivez votre projet <span aria-hidden="true">*</span></label>
+        <label class="form-label" for="message">Décrivez votre projet
+          <span aria-hidden="true">*</span>
+        </label>
         <textarea
           class="form-input form-textarea"
           id="message"
@@ -64,10 +67,8 @@ ogDescription: "Décrivez-moi votre projet — je vous réponds sous 48h."
           required
           placeholder="Qui êtes-vous, quel est votre besoin, avez-vous une deadline ?"></textarea>
       </div>
-
       <button type="submit" class="btn-primary">Envoyer →</button>
     </form>
-
     <aside class="contact-aside">
       <div class="contact-aside-block">
         <p class="contact-aside-label">Réponse</p>
@@ -88,6 +89,5 @@ ogDescription: "Décrivez-moi votre projet — je vous réponds sous 48h."
         </a>
       </div>
     </aside>
-
   </div>
 </section>
