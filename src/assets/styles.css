@@ -1668,6 +1668,21 @@ footer a:hover {
   line-height: 1.6;
 }
 
+.offres-stack {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--cream-dark);
+}
+
+.offres-stack-label {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
 /* OFFRES POUR QUI */
 .offres-pour-qui {
   margin-top: 1.75rem;
@@ -2239,7 +2254,7 @@ footer a:hover {
 }
 
 .contact-rdv-banner {
-  background: rgba(42, 122, 59, 0.08);
+  background: var(--violet-light);
   border-bottom: 1px solid var(--cream-dark);
   padding: 2rem;
   position: relative;
@@ -2250,7 +2265,7 @@ footer a:hover {
   content: '\201C';
   font-family: Georgia, serif;
   font-size: 24rem;
-  color: #2a7a3b;
+  color: var(--violet-mid);
   opacity: 0.06;
   position: absolute;
   top: -3rem;
@@ -2265,7 +2280,7 @@ footer a:hover {
   content: '\201D';
   font-family: Georgia, serif;
   font-size: 24rem;
-  color: #2a7a3b;
+  color: var(--violet-mid);
   opacity: 0.06;
   position: absolute;
   bottom: -16rem;
@@ -2288,7 +2303,9 @@ footer a:hover {
 }
 
 .contact-rdv-desc {
-  color: var(--text-muted);
+  font-size: 1.25rem;
+  font-family: var(--font-body);
+  color: var(--violet-deep);
   margin-top: 0.25rem;
 }
 

@@ -7,12 +7,19 @@
     <link rel="shortcut icon" href="/assets/logo.svg"/>
     <title>{{ title }}</title>
     <meta name="description" content="{{ description }}"/>
-    <meta name="robots" content="noindex, nofollow"/>
+    {% if robots %}<meta name="robots" content="{{ robots }}"/>{% endif %}
     <meta name="geo.region" content="FR-24"/>
     <meta name="geo.placename" content="Dordogne, Périgord, Limousin"/>
     <meta property="og:title" content="{{ ogTitle or title }}"/>
     <meta property="og:description" content="{{ ogDescription or description }}"/>
     <meta property="og:locale" content="fr_FR"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://alexandrajanin.fr{{ page.url }}"/>
+    <meta property="og:image" content="https://alexandrajanin.fr/assets/{{ ogImage or 'og-image.png' }}"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:image" content="https://alexandrajanin.fr/assets/{{ ogImage or 'og-image.png' }}"/>
     <script type="application/ld+json">
       { "@context": "https://schema.org", "@graph": [ { "@type": ["LocalBusiness", "ProfessionalService"], "@id":
       "https://alexandrajanin.fr/offres", "name": "Alexandra Janin", "description": "Développeuse web freelance spécialisée en
@@ -84,22 +91,22 @@
       </a>
       <ul class="nav-links" id="nav-menu">
         <li>
-          <a href="/" {% if page.url == '/' %}aria-current="page"{% endif %}>
+          <a href="/" {% if page.url == '/' %} aria-current="page" {% endif %}>
             <span>Présentation</span>
           </a>
         </li>
         <li>
-          <a href="/offres/" {% if page.url.startsWith('/offres/') %}aria-current="page"{% endif %}>
+          <a href="/offres/" {% if page.url.startsWith('/offres/') %} aria-current="page" {% endif %}>
             <span>Services</span>
           </a>
         </li>
         <li>
-          <a href="/realisations/" {% if page.url.startsWith('/realisations/') %}aria-current="page"{% endif %}>
+          <a href="/realisations/" {% if page.url.startsWith('/realisations/') %} aria-current="page" {% endif %}>
             <span>Réalisations</span>
           </a>
         </li>
         <li>
-          <a href="/contact/" {% if page.url.startsWith('/contact/') %}aria-current="page"{% endif %}>
+          <a href="/contact/" {% if page.url.startsWith('/contact/') %} aria-current="page" {% endif %}>
             <span>Contact</span>
           </a>
         </li>
@@ -147,6 +154,14 @@
               12.297c0-6.627-5.373-12-12-12"/>
             </svg>
             <span>GitHub</span>
+          </a>
+          <a href="https://www.malt.fr/profile/alexandrajanin" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewbox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+              <rect x="11" y="2" width="2" height="20" rx="1"/>
+              <rect x="11" y="2" width="2" height="20" rx="1" transform="rotate(60 12 12)"/>
+              <rect x="11" y="2" width="2" height="20" rx="1" transform="rotate(120 12 12)"/>
+            </svg>
+            <span>Malt</span>
           </a>
           <a href="/mentions-legales/">Mentions légales</a>
         </nav>
