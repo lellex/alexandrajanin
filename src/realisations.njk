@@ -17,7 +17,7 @@ ogDescription: "Projets front-end, design system et sites web : Geotrek, Hydro E
     <p class="section-label">Projets</p>
     <h1 class="section-title">Réalisations</h1>
     <p class="section-subtitle">
-      Service public, SaaS, recherche académique, collectivités, industries, artisans et indépendants — des contextes très
+      Service public, SaaS, recherche académique, collectivités, industries, e-commerce et indépendants — des contextes très
       différents, une même façon de travailler :
       <strong>comprendre le métier d'abord, interroger les utilisateurs et construire ensuite</strong>.
     </p>
@@ -157,7 +157,7 @@ ogDescription: "Projets front-end, design system et sites web : Geotrek, Hydro E
         </div>
       </article>
       <!-- OBSERVATOIRE DES CRUES -->
-      <article class="real-card">
+      <article class="real-card real-card--hidden">
         <div class="real-screenshot" style="background-image: url('/assets/screenshots/observatoirecrues.png')"></div>
         <div class="real-card-body">
           <div class="real-header">
@@ -186,7 +186,7 @@ ogDescription: "Projets front-end, design system et sites web : Geotrek, Hydro E
         </div>
       </article>
       <!-- ACCESSIMAP -->
-      <article class="real-card">
+      <article class="real-card real-card--hidden">
         <div class="real-screenshot" style="background-image: url('/assets/screenshots/accessimap.png')"></div>
         <div class="real-card-body">
           <div class="real-header">
@@ -216,7 +216,7 @@ ogDescription: "Projets front-end, design system et sites web : Geotrek, Hydro E
         </div>
       </article>
       <!-- GEOTREK -->
-      <article class="real-card">
+      <article class="real-card real-card--hidden">
         <div class="real-screenshot" style="background-image: url('/assets/screenshots/geotrek.png')"></div>
         <div class="real-card-body">
           <div class="real-header">
@@ -246,7 +246,7 @@ ogDescription: "Projets front-end, design system et sites web : Geotrek, Hydro E
         </div>
       </article>
       <!-- SUD WEB 2018 -->
-      <article class="real-card">
+      <article class="real-card real-card--hidden">
         <div class="real-screenshot" style="background-image: url('/assets/screenshots/sudweb.png')"></div>
         <div class="real-card-body">
           <div class="real-header">
@@ -276,6 +276,11 @@ ogDescription: "Projets front-end, design system et sites web : Geotrek, Hydro E
         </div>
       </article>
     </div>
+    <div class="real-voir-plus-wrap">
+      <button class="btn-outline real-voir-plus" id="btn-voir-plus" aria-expanded="false">
+        <span>Voir plus de réalisations →</span>
+      </button>
+    </div>
   </div>
 </section>
 <section id="confiance">
@@ -283,14 +288,68 @@ ogDescription: "Projets front-end, design system et sites web : Geotrek, Hydro E
     <p class="section-label">Références</p>
     <h2 class="section-title confiance-title">Ils m'ont fait confiance</h2>
     <div class="confiance-logos">
-      <img src="/assets/logos/airbus.svg" alt="Airbus" class="confiance-logo">
-      <img src="/assets/logos/meteo-france.svg" alt="Météo France" class="confiance-logo">
       <img src="/assets/logos/ministere-culture.svg" alt="Ministère de la Culture" class="confiance-logo">
-      <img src="/assets/logos/kiabi.svg" alt="Kiabi" class="confiance-logo">
-      <img src="/assets/logos/boulanger.svg" alt="Boulanger" class="confiance-logo">
-      <img src="/assets/logos/lequipe.svg" alt="L'Équipe" class="confiance-logo">
-      <img src="/assets/logos/makina-corpus.png" alt="Makina Corpus" class="confiance-logo">
       <img src="/assets/logos/iadvize.svg" alt="iAdvize" class="confiance-logo">
+      <img src="/assets/logos/makina-corpus.png" alt="Makina Corpus" class="confiance-logo">
+      <img src="/assets/logos/meteo-france.svg" alt="Météo France" class="confiance-logo">
+      <img src="/assets/logos/vigicrue.svg" alt="Vigicrue" class="confiance-logo">
+      <img src="/assets/logos/airbus.svg" alt="Airbus" class="confiance-logo">
+      <img src="/assets/logos/lequipe.svg" alt="L'Équipe" class="confiance-logo">
+      <img src="/assets/logos/rouge-gorge.svg" alt="Rouge Gorge Lingerie" class="confiance-logo">
+      <img src="/assets/logos/rougier-ple.png" alt="Rougier & Plé" class="confiance-logo">
+      <img src="/assets/logos/boulanger.svg" alt="Boulanger" class="confiance-logo">
+      <img src="/assets/logos/kiabi.svg" alt="Kiabi" class="confiance-logo">
+    </div>
+  </div>
+</section>
+<section id="temoignages">
+  <div class="section-inner">
+    <h2 class="section-label">Témoignages</h2>
+    <div class="carousel-temoignages">
+      <div class="carousel-slides">
+        <blockquote class="temoignage-slide active">
+          <div class="temoignage-quote">
+            <p>Pour t’avoir eue dans mon équipe, je peux témoigner de ta rigueur, de ton exigence et de ta capacité à t’investir
+              pleinement dans les sujets que tu portes.</p>
+            <p>Ton expertise sur l’accessibilité (RGAA/RGESN, refactoring, design systems accessibles) répond à un vrai besoin que
+              beaucoup de structures sous-estiment encore. Celles qui te feront confiance ne s’y tromperont pas.</p>
+            <p>Plein de belles missions à toi&nbsp;!</p>
+          </div>
+          <div class="temoignage-auteur">
+            <span class="temoignage-nom">Marc Saboureau</span>
+            <span class="temoignage-role">Directeur d’agence — Makina Corpus</span>
+          </div>
+        </blockquote>
+        <blockquote class="temoignage-slide">
+          <div class="temoignage-quote">
+            <p>Alexandra excelle dans son métier. En tant que développeuse, elle maîtrise parfaitement les outils et les frameworks,
+              et elle travaille avec soin et sens du détail.</p>
+            <p>Le travail qu’elle a accompli chez IOT NINJA a eu un impact considérable, car elle est très rapide dans la
+              réalisation des projets qui lui sont confiés.</p>
+            <p>Pour une start-up comme la nôtre, cela nous aide à livrer notre MVP rapidement, dans le respect du budget et avec un
+              niveau de qualité élevé.</p>
+          </div>
+          <div class="temoignage-auteur">
+            <span class="temoignage-nom">Adamson dela Cruz</span>
+            <span class="temoignage-role">IoT/DevOps/Cloud Professional</span>
+          </div>
+        </blockquote>
+        <blockquote class="temoignage-slide">
+          <div class="temoignage-quote">
+            <p>Alexandra excelle dans la conception de pages web. Elle apprend vite et fournit un travail de qualité.</p>
+            <p>Ce fut un plaisir de travailler avec elle.</p>
+          </div>
+          <div class="temoignage-auteur">
+            <span class="temoignage-nom">Olivier Degobert</span>
+            <span class="temoignage-role">CEO - Pictime Group</span>
+          </div>
+        </blockquote>
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-btn carousel-prev" aria-label="Témoignage précédent">←</button>
+        <div class="carousel-dots"></div>
+        <button class="carousel-btn carousel-next" aria-label="Témoignage suivant">→</button>
+      </div>
     </div>
   </div>
 </section>

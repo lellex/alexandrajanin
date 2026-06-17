@@ -130,14 +130,14 @@ ogDescription: "Sites web sur mesure pour gîtes, artisans et associations en P�
         <p class="apropos-text">
           <strong>Formée à l'accessibilité, l'éco-conception et la sécurité</strong>
           — j'accompagne des projets qui demandent rigueur technique et sensibilité
-                    design.
+                              design.
         </p>
         <p class="section-label" style="margin-bottom: 0.75rem">
           Mes expertises
         </p>
         <div class="tags-row">
           <span class="tag gold">Design</span>
-          <span class="tag gold">Analyse du besoin</span>
+          <span class="tag gold">Analyse métier</span>
           <span class="tag gold">Accessibilité</span>
           <span class="tag">Angular</span>
           <span class="tag">React</span>
@@ -159,7 +159,7 @@ ogDescription: "Sites web sur mesure pour gîtes, artisans et associations en P�
       <p class="techno-intro">
         Des solutions choisies pour leur
         <strong>rapidité</strong>,
-                                                            leur
+                                                                      leur
         <strong>simplicité</strong>
         et votre
         <strong>autonomie</strong>.
@@ -272,21 +272,3 @@ ogDescription: "Sites web sur mesure pour gîtes, artisans et associations en P�
     </div>
   </div>
 </section>
-<script>
-  (function () {
-    var flower = document.querySelector(".hero-flower");
-    if (! flower) 
-      return;
-    
-    var ticking = false;
-    window.addEventListener("scroll", function () {
-      if (! ticking) {
-        requestAnimationFrame(function () {
-          flower.style.transform = "rotate(" + window.scrollY * 0.12 + "deg)";
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }, {passive: true});
-  })();
-</script>

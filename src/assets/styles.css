@@ -48,6 +48,34 @@ a {
 
 a:hover {
   color: var(--violet-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.btn-primary:hover,
+.btn-outline:hover,
+.nav-logo:hover,
+.nav-links a:hover,
+.svc-tile:hover,
+.footer-eco-badge:hover {
+  text-decoration: none;
+}
+
+a[target="_blank"]:not(.btn-primary):not(.btn-outline):not(.nav-logo):not(.svc-tile):not(.footer-eco-badge):not(:has(.confiance-logo)):not(footer *)::after {
+  content: '';
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  margin-left: 0.25em;
+  vertical-align: middle;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%236c35a7' d='M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z'/%3E%3Cpath fill='%236c35a7' d='M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+}
+
+footer a[target="_blank"]:not(.footer-eco-badge)::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23ffffff' d='M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z'/%3E%3Cpath fill='%23ffffff' d='M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z'/%3E%3C/svg%3E");
 }
 
 /* NAV */
@@ -915,8 +943,8 @@ section {
 footer {
   background: var(--dark);
   padding: 2.5rem 2rem;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
   color: var(--cream-dark);
   text-align: center;
 }
@@ -967,10 +995,35 @@ footer a {
   transition: color 0.2s;
   display: flex;
   align-items: center;
+  gap: .5rem;
 }
 
 footer a:hover {
   color: var(--white);
+}
+
+.footer-eco {
+  font-family: var(--font-mono);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-eco-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  border-radius: 4px;
+  overflow: hidden;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.footer-eco-text {
+  color: rgba(223, 212, 176, 0.6);
+  font-size: 0.75rem;
 }
 
 
@@ -1118,6 +1171,11 @@ footer a:hover {
   gap: 1.5rem;
 }
 
+.real-voir-plus-wrap {
+  margin-top: 2rem;
+  text-align: center;
+}
+
 .real-card {
   background: transparent;
   border: 2px solid var(--dark);
@@ -1127,6 +1185,10 @@ footer a:hover {
   display: flex;
   flex-direction: column;
   transition: border-color 0.25s;
+}
+
+.real-card--hidden {
+  display: none;
 }
 
 .real-card::before {
@@ -1590,22 +1652,187 @@ footer a:hover {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 2.5rem 3.5rem;
+  gap: 2rem 3rem;
 }
 
 .confiance-logo {
-  height: 36px;
-  width: auto;
-  max-width: 140px;
+  height: auto;
+  width: 80px;
+  max-height: 80px;
   object-fit: contain;
   filter: grayscale(1);
   opacity: 0.45;
   transition: opacity 0.2s, filter 0.2s;
 }
 
+@media (max-width: 700px) {
+  .confiance-logos {
+    gap: 1.5rem 2rem;
+  }
+
+  .confiance-logo {
+    height: 28px;
+    max-width: 90px;
+  }
+}
+
 .confiance-logo:hover {
   opacity: 0.8;
   filter: grayscale(0);
+}
+
+/* TÉMOIGNAGES */
+#temoignages {
+  background: var(--white);
+  border-top: 1px solid var(--cream-dark);
+}
+
+.carousel-temoignages {
+  /* max-width: 700px; */
+  margin: 2.5rem auto 0;
+}
+
+.temoignage-slide {
+  display: none;
+}
+
+.temoignage-slide.active {
+  display: block;
+  animation: temoignage-in 0.5s ease;
+}
+
+@keyframes temoignage-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.temoignage-quote {
+  position: relative;
+  padding: 2rem 3rem;
+  margin-bottom: 1.75rem;
+  overflow: visible;
+}
+
+.temoignage-quote::before {
+  content: '\201C';
+  font-family: Georgia, serif;
+  font-size: 14rem;
+  color: var(--violet-mid);
+  opacity: 0.08;
+  position: absolute;
+  top: -2rem;
+  left: -1rem;
+  line-height: 1;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+}
+
+.temoignage-quote::after {
+  content: '\201D';
+  font-family: Georgia, serif;
+  font-size: 14rem;
+  color: var(--violet-mid);
+  opacity: 0.08;
+  position: absolute;
+  bottom: -6rem;
+  right: -1rem;
+  line-height: 1;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+}
+
+.temoignage-quote p {
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-style: italic;
+  font-family: var(--font-body);
+  color: var(--violet-deep);
+  line-height: 1.4;
+  position: relative;
+  z-index: 1;
+}
+
+.temoignage-quote p+p {
+  margin-top: 0.75rem;
+}
+
+.temoignage-auteur {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding-left: 1.75rem;
+}
+
+.temoignage-nom {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--violet-deep);
+}
+
+.temoignage-role {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.carousel-btn {
+  background: none;
+  border: 1px solid var(--violet-light);
+  border-radius: 50%;
+  width: 2.25rem;
+  height: 2.25rem;
+  cursor: pointer;
+  color: var(--violet-deep);
+  font-family: var(--font-mono);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.carousel-btn:hover {
+  border-color: var(--violet-mid);
+  background: var(--violet-light);
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--violet-light);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.carousel-dot.active {
+  background: var(--violet-mid);
+  transform: scale(1.3);
 }
 
 @media (prefers-reduced-motion: reduce) {
