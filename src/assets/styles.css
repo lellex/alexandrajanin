@@ -1083,7 +1083,9 @@ footer {
 .footer-nav {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1.5rem;
+  flex-wrap: wrap;
   background: transparent;
   border: none;
   padding: 0;
