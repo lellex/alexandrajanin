@@ -6,6 +6,7 @@
 }
 
 :root {
+  --yellow: #ffb700;
   --violet-deep: #380075;
   --violet-mid: #6c35a7;
   --violet-light: #ede6f7;
@@ -136,7 +137,8 @@ nav {
   clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 100% 100%, 100% 0%);
 }
 
-.nav-links a:hover::before {
+.nav-links a:hover::before,
+.nav-links a[aria-current="page"]::before {
   transform: translate3d(0, 2px, 0) scale3d(1.08, 3, 1);
   clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0, 50% 0, 50% 100%, 50% 100%, 0 100%, 100% 100%, 100% 0%);
 }
@@ -146,7 +148,8 @@ nav {
   transition: transform 0.3s cubic-bezier(0.2, 1, 0.8, 1);
 }
 
-.nav-links a:hover span {
+.nav-links a:hover span,
+.nav-links a[aria-current="page"] span {
   transform: translate3d(0, -2px, 0);
 }
 
@@ -1177,36 +1180,19 @@ footer a:hover {
 }
 
 .real-card {
-  background: transparent;
-  border: 2px solid var(--dark);
+  background: var(--white);
+  border: 2px solid var(--cream-dark);
   border-radius: 6px;
   overflow: hidden;
   position: relative;
   display: flex;
   flex-direction: column;
-  transition: border-color 0.25s;
+  box-shadow: 5px 5px 0 var(--cream);
+  transition: box-shadow 0.2s cubic-bezier(0.7, 0, 0.2, 1), transform 0.2s cubic-bezier(0.7, 0, 0.2, 1);
 }
 
 .real-card--hidden {
   display: none;
-}
-
-.real-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  background: linear-gradient(to bottom, rgba(29, 28, 30, 0.07), transparent);
-  transition: opacity 0.35s ease;
-  pointer-events: none;
-}
-
-.real-card:hover {
-  border-color: var(--dark);
-}
-
-.real-card:hover::before {
-  opacity: 1;
 }
 
 .real-screenshot {

@@ -89,22 +89,22 @@
       </a>
       <ul class="nav-links">
         <li>
-          <a href="/">
+          <a href="/" {% if page.url == '/' %}aria-current="page"{% endif %}>
             <span>Présentation</span>
           </a>
         </li>
         <li>
-          <a href="/offres/">
+          <a href="/offres/" {% if page.url.startsWith('/offres/') %}aria-current="page"{% endif %}>
             <span>Services</span>
           </a>
         </li>
         <li>
-          <a href="/realisations/">
+          <a href="/realisations/" {% if page.url.startsWith('/realisations/') %}aria-current="page"{% endif %}>
             <span>Réalisations</span>
           </a>
         </li>
         <li>
-          <a href="/contact/">
+          <a href="/contact/" {% if page.url.startsWith('/contact/') %}aria-current="page"{% endif %}>
             <span>Contact</span>
           </a>
         </li>
