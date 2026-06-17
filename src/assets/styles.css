@@ -697,6 +697,16 @@ section {
   gap: 1.25rem;
 }
 
+.techno-note {
+  margin-top: 1.25rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-style: italic;
+  line-height: 1.6;
+  opacity: 0.75;
+}
+
 .techno-card {
   background: transparent;
   border: 2px solid var(--cream-dark);
