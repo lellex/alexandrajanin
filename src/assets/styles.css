@@ -15,6 +15,7 @@
   src: url('fonts/dm-sans-normal-latin-ext.woff2') format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+
 @font-face {
   font-family: 'DM Sans';
   font-style: normal;
@@ -23,6 +24,7 @@
   src: url('fonts/dm-sans-normal-latin.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
 @font-face {
   font-family: 'DM Sans';
   font-style: italic;
@@ -31,6 +33,7 @@
   src: url('fonts/dm-sans-italic-latin-ext.woff2') format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+
 @font-face {
   font-family: 'DM Sans';
   font-style: italic;
@@ -49,6 +52,7 @@
   src: url('fonts/ibm-plex-mono-400-latin-ext.woff2') format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+
 @font-face {
   font-family: 'IBM Plex Mono';
   font-style: normal;
@@ -57,6 +61,7 @@
   src: url('fonts/ibm-plex-mono-400-latin.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
 @font-face {
   font-family: 'IBM Plex Mono';
   font-style: normal;
@@ -65,6 +70,7 @@
   src: url('fonts/ibm-plex-mono-500-latin-ext.woff2') format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+
 @font-face {
   font-family: 'IBM Plex Mono';
   font-style: normal;
@@ -83,6 +89,7 @@
   src: url('fonts/vt323-latin-ext.woff2') format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+
 @font-face {
   font-family: 'VT323';
   font-style: normal;
@@ -203,6 +210,10 @@ nav {
   list-style: none;
 }
 
+.nav-hamburger {
+  display: none;
+}
+
 .nav-links a {
   font-family: var(--font-display);
   font-size: 1rem;
@@ -291,7 +302,7 @@ nav {
   align-items: center;
   gap: 6px;
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: var(--violet-mid);
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -599,7 +610,7 @@ section {
 
 .offres-category-desc {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
   letter-spacing: 0.2px;
   margin-left: auto;
@@ -844,7 +855,7 @@ section {
 
 .techno-label {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   letter-spacing: 2px;
   color: var(--violet-mid);
   opacity: 0.90;
@@ -888,7 +899,7 @@ section {
 
 .techno-avantages span {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: var(--forest);
   background: var(--white);
   border: 1px solid rgba(124, 85, 34, 0.15);
@@ -1113,7 +1124,7 @@ footer a:hover {
 
 .footer-eco-text {
   color: rgba(223, 212, 176, 0.6);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
 }
 
 
@@ -1150,8 +1161,7 @@ footer a:hover {
 
 @media (max-width: 700px) {
 
-  .real-body,
-  .real-cards-grid {
+  .real-body {
     grid-template-columns: 1fr;
   }
 
@@ -1168,6 +1178,12 @@ footer a:hover {
     font-size: 1.6rem;
   }
 
+  .offres-category-head-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
   .apropos-layout {
     grid-template-columns: 1fr;
   }
@@ -1178,6 +1194,94 @@ footer a:hover {
 
   .nav-links {
     display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border-bottom: 2px solid var(--cream-dark);
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem 0 1rem;
+    z-index: 99;
+  }
+
+  .nav-links.is-open {
+    display: flex;
+    animation: nav-slide-down 0.22s cubic-bezier(0.2, 1, 0.8, 1) both;
+  }
+
+  @keyframes nav-slide-down {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 2rem;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .nav-hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .nav-hamburger span {
+    display: block;
+    height: 3px;
+    background: var(--violet-deep);
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    transform-origin: center;
+  }
+
+  .nav-hamburger[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  .nav-hamburger[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-hamburger[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .nav-links a[aria-current="page"]::before {
+    content: '';
+    position: relative;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 8px;
+    border-radius: 50%;
+    background: var(--yellow);
+    pointer-events: none;
+    transform: none;
+    bottom: 0;
   }
 }
 
@@ -1222,7 +1326,7 @@ footer a:hover {
 
 .real-category-link {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: var(--violet-deep);
   text-decoration: none;
   letter-spacing: 0.3px;
@@ -1257,8 +1361,9 @@ footer a:hover {
 
 .real-cards-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
+  padding-bottom: 8px;
 }
 
 .real-voir-plus-wrap {
@@ -1314,7 +1419,7 @@ footer a:hover {
 
 .real-tag {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   padding: 3px 10px;
   border: none;
   border-radius: 9999px;
@@ -1341,7 +1446,7 @@ footer a:hover {
 
 .real-link {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: var(--violet-deep);
   text-decoration: none;
   letter-spacing: 0.3px;
@@ -1365,7 +1470,7 @@ footer a:hover {
 
 .real-client-label {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -1387,7 +1492,7 @@ footer a:hover {
 
 .real-section-title {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   letter-spacing: 0.8px;
   text-transform: uppercase;
   color: var(--violet-mid);
@@ -1567,7 +1672,7 @@ footer a:hover {
 
 .offres-pour-qui-label {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--text-muted);
@@ -1854,7 +1959,7 @@ footer a:hover {
 
 .temoignage-role {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
 }
 
@@ -2105,7 +2210,7 @@ footer a:hover {
 
 .contact-aside-label {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;

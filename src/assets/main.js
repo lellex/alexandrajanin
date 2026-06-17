@@ -1,3 +1,27 @@
+// Menu hamburger mobile
+(function () {
+  document.addEventListener('DOMContentLoaded', function () {
+    var btn = document.querySelector('.nav-hamburger');
+    var menu = document.getElementById('nav-menu');
+    if (!btn || !menu) return;
+
+    btn.addEventListener('click', function () {
+      var isOpen = menu.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      btn.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+    });
+
+    // Fermer le menu au clic sur un lien
+    menu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        menu.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', 'Ouvrir le menu');
+      });
+    });
+  });
+})();
+
 // Ouvre un <details> ciblé par l'ancre de l'URL
 (function () {
   function openDetailsFromHash() {

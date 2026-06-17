@@ -82,7 +82,7 @@
         </svg>
         <span class="nav-logo-text">Alexandra JANIN</span>
       </a>
-      <ul class="nav-links">
+      <ul class="nav-links" id="nav-menu">
         <li>
           <a href="/" {% if page.url == '/' %}aria-current="page"{% endif %}>
             <span>Présentation</span>
@@ -104,6 +104,11 @@
           </a>
         </li>
       </ul>
+      <button class="nav-hamburger" aria-expanded="false" aria-controls="nav-menu" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </nav>
     <main role="main">
       {{ content | safe }}
