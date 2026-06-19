@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
+    "@cloudflare/pages-plugin-static-forms": "^1.0.3",
     "wrangler": "^4.102.0"
   }
 }
