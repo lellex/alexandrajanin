@@ -12,19 +12,12 @@ export const onRequest = async (context) => {
       const typeProjet = formData.get("type-projet") || "";
       const message = formData.get("message") || "";
 
-      await fetch("https://api.nuntly.com/emails", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${context.env.NUNTLY_API_KEY}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          from: "contact@alexandrajanin.fr",
-          to: "alexjanin@pm.me",
-          replyTo: email,
-          subject: `Nouveau contact de ${prenom}`,
-          text: `Prénom : ${prenom}\nEmail : ${email}\nType de projet : ${typeProjet}\n\nMessage :\n${message}`,
-        }),
+      await context.env.EMAIL.send({
+        from: "contact@alexandrajanin.fr",
+        to: "alexjanin@pm.me",
+        replyTo: email,
+        subject: `Nouveau contact de ${prenom}`,
+        text: `Prénom : ${prenom}\nEmail : ${email}\nType de projet : ${typeProjet}\n\nMessage :\n${message}`,
       });
 
       return Response.redirect("/contact/merci/", 302);
