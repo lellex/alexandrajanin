@@ -1,9 +1,9 @@
 ---
 layout: layouts/base.njk
 title: "Alexandra Janin, développeuse web · Périgord · Limousin"
-description: "Développeuse & designeuse web indépendante. Sites web accessibles et éco-conçus pour en Périgord, Limousin — Périgueux, Thiviers, Nontron, Brive, Limoges."
+description: "Développeuse & designeuse web indépendante. Sites web accessibles et éco-conçus en Périgord, Limousin — Périgueux, Thiviers, Nontron, Brive, Limoges."
 ogTitle: "Alexandra Janin — Développeuse web en Dordogne · Périgord"
-ogDescription: "Sites web sur mesure pour gîtes, artisans et associations en Périgord et Limousin."
+ogDescription: "Développement sur mesure pour collectivités, PME, associations et indépendants en Périgord Limousin."
 ---
 
 <!-- HERO -->
@@ -233,8 +233,10 @@ ogDescription: "Sites web sur mesure pour gîtes, artisans et associations en P�
       N'hésitez pas à me décrire votre projet — même si vous ne savez pas encore exactement ce dont vous avez besoin.
     </p>
     <p class="contact-sub">
-      Basée en Dordogne | Périgueux, Brive, Limoges, Nontron, Thiviers — j'interviens auprès des artisans, gîtes, associations
-      et créateurs du Périgord, du Limousin et de la Corrèze, en présentiel ou à distance.
+      Basée en Dordogne | Périgueux, Brive, Limoges, Nontron, Thiviers — je propose un accompagnement sur-mesure pour donner de la visibilité en ligne aux associations, indépendants, artisans et gîtes du Périgord, du Limousin et de la Corrèze, en présentiel ou à distance.
+    </p>
+    <p class="contact-sub">
+      Je travaille aussi régulièrement pour le secteur public ou les collectivités afin de résoudre des problématiques métiers ou faire face à du code difficile à maintenir.
     </p>
   </div>
 </section>
@@ -277,13 +279,15 @@ ogDescription: "Sites web sur mesure pour gîtes, artisans et associations en P�
 <script>
   (function (C, A, L) {
     let p = function (a, ar) {
-      a.q.push(ar)
+      a
+        .q
+        .push(ar)
     };
     let d = C.document;
     C.Cal = C.Cal || function () {
       let cal = C.Cal;
       let ar = arguments;
-      if (! cal.loaded) {
+      if (!cal.loaded) {
         cal.ns = {};
         cal.q = cal.q || [];
         d
