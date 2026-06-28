@@ -796,8 +796,8 @@ section {
 .apropos-text {
   font-size: 1.05rem;
   color: var(--text);
-  line-height: 1.8;
-  margin-bottom: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
 }
 
 /* TECHNOS */
@@ -822,8 +822,14 @@ section {
 
 .techno-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .techno-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .techno-note {
@@ -844,6 +850,7 @@ section {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+  position: relative;
 }
 
 .techno-card-head {
@@ -907,11 +914,105 @@ section {
   letter-spacing: 0.3px;
 }
 
+.techno-detail {
+  margin-top: 0.75rem;
+  border-top: 1px solid var(--cream-dark);
+  padding-top: 0.6rem;
+}
+
+.techno-detail summary {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--violet-mid);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  opacity: 0.85;
+  user-select: none;
+}
+
+.techno-detail summary::-webkit-details-marker {
+  display: none;
+}
+
+.techno-detail summary::after {
+  content: "+";
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.techno-detail[open] summary::after {
+  content: "−";
+}
+
+.techno-detail-body {
+  position: absolute;
+  left: -2px;
+  right: -2px;
+  top: 100%;
+  z-index: 20;
+  background: var(--white);
+  border: 2px solid var(--cream-dark);
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  padding: 0.9rem 1.35rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
 .tags-row {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: .5rem;
+}
+
+.blog-callout {
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.35rem;
+  background: var(--white);
+  border: 1.5px dashed var(--forest-mid);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.blog-callout-tag {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--forest);
+  line-height: 1.1;
+}
+
+.blog-callout-text {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  font-style: italic;
+}
+
+.blog-callout-link {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--forest);
+  text-decoration: underline;
+  text-decoration-color: rgba(124, 85, 34, 0.35);
+  text-underline-offset: 3px;
+  align-self: flex-start;
+  letter-spacing: 0.3px;
+}
+
+.blog-callout-link:hover {
+  color: var(--forest-mid);
+  text-decoration-color: rgba(124, 85, 34, 0.6);
 }
 
 .tag {
@@ -1886,7 +1987,7 @@ footer a:hover {
 
 /* TÉMOIGNAGES */
 #temoignages {
-  background: var(--white);
+  background: var(--cream-dark);
   border-top: 1px solid var(--cream-dark);
 }
 
