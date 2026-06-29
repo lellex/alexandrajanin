@@ -1,9 +1,9 @@
 ---
 layout: layouts/base.njk
-title: "Contact — Alexandra Janin"
+title: "Contact - Alexandra Janin"
 description: "Parlons de votre projet web. Alexandra Janin, développeuse web indépendante en Dordogne, disponible pour vos projets de sites, applications et accompagnement IA."
-ogTitle: "Contact — Alexandra Janin"
-ogDescription: "Décrivez-moi votre projet — je vous réponds sous 48h."
+ogTitle: "Contact - Alexandra Janin"
+ogDescription: "Décrivez-moi votre projet - je vous réponds sous 48h."
 ---
 
 <div class="contact-rdv-banner">
@@ -22,7 +22,7 @@ ogDescription: "Décrivez-moi votre projet — je vous réponds sous 48h."
     <p class="section-label">travaillons ensemble</p>
     <h1 class="section-title">Parlons de votre projet</h1>
     <p class="contact-page-sub">
-      Pas besoin d'avoir tout cadré — décrivez-moi votre idée, même floue. Je vous réponds sous 48h.
+      Pas besoin d'avoir tout cadré, décrivez-moi votre idée, même floue. Je vous réponds sous 48h.
     </p>
   </div>
 </section>
@@ -96,13 +96,15 @@ ogDescription: "Décrivez-moi votre projet — je vous réponds sous 48h."
 <script>
   (function (C, A, L) {
     let p = function (a, ar) {
-      a.q.push(ar)
+      a
+        .q
+        .push(ar)
     };
     let d = C.document;
     C.Cal = C.Cal || function () {
       let cal = C.Cal;
       let ar = arguments;
-      if (! cal.loaded) {
+      if (!cal.loaded) {
         cal.ns = {};
         cal.q = cal.q || [];
         d
