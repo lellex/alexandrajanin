@@ -321,7 +321,7 @@ nav {
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: 3.8rem;
+  font-size: 3.4rem;
   font-weight: 700;
   color: var(--violet-deep);
   line-height: 1.08;
@@ -618,7 +618,7 @@ section {
 
 .offres-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(2, minmax(230px, 1fr));
   gap: 0.75rem;
   margin-bottom: 0;
 }
@@ -676,6 +676,91 @@ section {
 
 #offres-app .offre-card::before {
   background: linear-gradient(to bottom, rgba(29, 28, 30, 0.07), transparent);
+}
+
+.offre-card--equipe {
+  grid-column: span 2;
+}
+
+.offre-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: auto;
+  padding-top: 0.7rem;
+}
+
+.offre-price-row .offre-price {
+  margin-top: 0;
+  border-top: none;
+  padding-top: 0;
+}
+
+.offre-malt-btn span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1rem;
+  font-size: 0.85rem;
+}
+
+.offre-accordion {
+  border-top: 1px solid rgba(29, 28, 30, 0.12);
+  padding-top: 0.6rem;
+}
+
+.offre-accordion-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  color: var(--dark);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  transition: color 0.2s ease;
+}
+
+.offre-accordion-summary:hover {
+  color: var(--violet-mid);
+}
+
+.offre-accordion-summary:focus-visible {
+  outline: 2px solid var(--violet-mid);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.offre-accordion-summary::-webkit-details-marker {
+  display: none;
+}
+
+.offre-accordion-icon {
+  flex-shrink: 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.offre-accordion[open] .offre-accordion-icon {
+  transform: rotate(45deg);
+}
+
+.offre-accordion-body {
+  margin-top: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.offre-accordion-body .offre-details {
+  margin-top: 0;
 }
 
 
@@ -2201,6 +2286,16 @@ footer a:hover {
   list-style: none;
   user-select: none;
   color: var(--white);
+  transition: background-color 0.2s ease;
+}
+
+.faq-question:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.faq-question:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--gold);
 }
 
 .faq-question::-webkit-details-marker {
