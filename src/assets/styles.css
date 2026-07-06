@@ -477,7 +477,7 @@ section {
 }
 
 
-#offres-ia {
+#offres-conseil {
   background: var(--white);
 }
 
@@ -492,17 +492,17 @@ section {
   color: var(--forest-mid);
 }
 
-#offres-app {
+#offres-dev {
   background: var(--white);
 }
 
-#offres-app .offres-category-title,
-#offres-app .offre-title,
-#offres-app .offre-price {
+#offres-dev .offres-category-title,
+#offres-dev .offre-title,
+#offres-dev .offre-price {
   color: var(--dark);
 }
 
-#offres-app .offre-details li::before {
+#offres-dev .offre-details li::before {
   color: var(--dark);
   opacity: 0.4;
 }
@@ -541,6 +541,10 @@ section {
   color: var(--violet-mid);
 }
 
+.offres-grid--ia {
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
 
 .offres-category {
   margin-bottom: 3rem;
@@ -556,8 +560,9 @@ section {
 
 .offres-category-head-inner {
   display: flex;
-  align-items: baseline;
-  gap: 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
   border-bottom: 2px solid var(--violet-light);
   padding-bottom: 0.6rem;
 }
@@ -609,11 +614,10 @@ section {
 }
 
 .offres-category-desc {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
   color: var(--text-muted);
-  letter-spacing: 0.2px;
-  margin-left: auto;
+  line-height: 1.5;
 }
 
 .offres-grid {
@@ -654,11 +658,42 @@ section {
   border-color: var(--violet-mid);
 }
 
+.offre-card--highlight {
+  grid-column: 1 / -1;
+  background: var(--violet-light);
+  border: 2px dashed var(--violet-mid);
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.offre-card--highlight::before {
+  display: none;
+}
+
+.offre-highlight-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1 1 280px;
+  min-width: 0;
+}
+
+.offre-card--highlight .offre-title {
+  font-size: 1.4rem;
+}
+
+.offre-highlight-btn {
+  flex-shrink: 0;
+}
+
 #offres-sites .offre-card:hover {
   border-color: var(--forest-mid);
 }
 
-#offres-app .offre-card:hover {
+#offres-dev .offre-card:hover {
   border-color: rgba(29, 28, 30, 0.4);
 }
 
@@ -670,16 +705,12 @@ section {
   background: linear-gradient(to bottom, rgba(124, 85, 34, 0.1), transparent);
 }
 
-#offres-app .offre-card {
+#offres-dev .offre-card {
   border-color: var(--dark);
 }
 
-#offres-app .offre-card::before {
+#offres-dev .offre-card::before {
   background: linear-gradient(to bottom, rgba(29, 28, 30, 0.07), transparent);
-}
-
-.offre-card--equipe {
-  grid-column: span 2;
 }
 
 .offre-price-row {
@@ -1238,7 +1269,7 @@ section {
   flex-shrink: 0;
 }
 
-#offres-ia .offre-card {
+#offres-conseil .offre-card {
   overflow: visible;
 }
 
@@ -1401,6 +1432,10 @@ footer a:hover {
 
 @media (max-width: 700px) {
 
+  .offres-grid {
+    grid-template-columns: 1fr;
+  }
+
   .real-body {
     grid-template-columns: 1fr;
   }
@@ -1419,12 +1454,6 @@ footer a:hover {
 
   .offres-category-title {
     font-size: 1.6rem;
-  }
-
-  .offres-category-head-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;
   }
 
   .apropos-layout {
@@ -2070,9 +2099,9 @@ footer a:hover {
   overflow: hidden;
 }
 
-#offres-ia,
+#offres-conseil,
 #offres-sites,
-#offres-app,
+#offres-dev,
 #offres-contact,
 #realisations-intro,
 #realisations-liste {
