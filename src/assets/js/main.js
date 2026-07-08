@@ -99,3 +99,64 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }, { passive: true });
 })();
+
+// Filtre des offres par profil cible
+(function () {
+  document.addEventListener('DOMContentLoaded', function () {
+    var filterBar = document.querySelector('.offres-filter');
+    if (!filterBar) return;
+
+    var buttons = filterBar.querySelectorAll('.offres-filter-btn');
+    var sections = document.querySelectorAll('.offres-category');
+    var allCards = document.querySelectorAll('.offre-card');
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var FADE_MS = 200;
+
+    function matchesProfile(card, profile) {
+      var profils = (card.dataset.profils || '').split(' ');
+      return profile === 'all' || profils.indexOf('all') !== -1 || profils.indexOf(profile) !== -1;
+    }
+
+    function showMatching(profile) {
+      sections.forEach(function (category) {
+        var cards = category.querySelectorAll('.offre-card');
+        var visibleCount = 0;
+        cards.forEach(function (card) {
+          var match = matchesProfile(card, profile);
+          card.classList.toggle('offre-card--hidden', !match);
+          if (match) visibleCount++;
+        });
+        category.classList.toggle('offres-category--hidden', visibleCount === 0);
+      });
+      // Double rAF : laisse le navigateur peindre l'état display:flex + opacity:0
+      // avant de retirer la classe de fondu, sinon la transition est sautée.
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          allCards.forEach(function (card) {
+            if (!card.classList.contains('offre-card--hidden')) {
+              card.classList.remove('offre-card--fade');
+            }
+          });
+        });
+      });
+    }
+
+    function applyFilter(profile) {
+      if (reduceMotion) {
+        showMatching(profile);
+        return;
+      }
+      allCards.forEach(function (card) { card.classList.add('offre-card--fade'); });
+      window.setTimeout(function () { showMatching(profile); }, FADE_MS);
+    }
+
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        if (btn.classList.contains('is-active')) return;
+        buttons.forEach(function (b) { b.classList.remove('is-active'); });
+        btn.classList.add('is-active');
+        applyFilter(btn.dataset.filter);
+      });
+    });
+  });
+})();
