@@ -476,6 +476,40 @@ section {
   padding-bottom: 0;
 }
 
+.offres-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.75rem;
+}
+
+.offres-filter-btn {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.2px;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  border: 2px solid var(--violet-mid);
+  background: transparent;
+  color: var(--violet-mid);
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.offres-filter-btn:hover {
+  background: var(--violet-light);
+}
+
+.offres-filter-btn.is-active {
+  background: var(--violet-deep);
+  border-color: var(--violet-deep);
+  color: var(--white);
+}
+
+.offres-filter-btn:focus-visible {
+  outline: 2px solid var(--violet-deep);
+  outline-offset: 2px;
+}
 
 #offres-conseil {
   background: var(--white);
@@ -637,7 +671,20 @@ section {
   gap: 0.6rem;
   position: relative;
   overflow: hidden;
-  transition: border-color 0.35s ease;
+  opacity: 1;
+  transition: border-color 0.35s ease, opacity 0.2s ease;
+}
+
+.offre-card--fade {
+  opacity: 0;
+}
+
+.offre-card--hidden {
+  display: none;
+}
+
+.offres-category--hidden {
+  display: none;
 }
 
 .offre-card::before {
@@ -1956,36 +2003,6 @@ footer a:hover {
   text-transform: uppercase;
   color: var(--text-muted);
   margin-bottom: 0.75rem;
-}
-
-/* OFFRES POUR QUI */
-.offres-pour-qui {
-  margin-top: 1.75rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid var(--cream-dark);
-}
-
-.offres-pour-qui-label {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 0.75rem;
-}
-
-.offres-pour-qui-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem 1.5rem;
-}
-
-.offres-pq-item {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 1rem;
-  color: var(--text);
 }
 
 /* DECORATIVE FLOWERS */
