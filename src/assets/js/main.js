@@ -109,6 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var buttons = filterBar.querySelectorAll('.offres-filter-btn');
     var sections = document.querySelectorAll('.offres-category');
     var allCards = document.querySelectorAll('.offre-card');
+    var statusEl = document.getElementById('offres-filter-status');
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var FADE_MS = 200;
 
@@ -117,17 +118,25 @@ document.addEventListener('DOMContentLoaded', function () {
       return profile === 'all' || profils.indexOf('all') !== -1 || profils.indexOf(profile) !== -1;
     }
 
-    function showMatching(profile) {
+    function showMatching(profile, profileLabel) {
+      var totalVisible = 0;
       sections.forEach(function (category) {
         var cards = category.querySelectorAll('.offre-card');
+        var emptyNote = category.querySelector('.offres-category-empty');
         var visibleCount = 0;
         cards.forEach(function (card) {
           var match = matchesProfile(card, profile);
           card.classList.toggle('offre-card--hidden', !match);
           if (match) visibleCount++;
         });
-        category.classList.toggle('offres-category--hidden', visibleCount === 0);
+        if (emptyNote) emptyNote.hidden = visibleCount !== 0;
+        totalVisible += visibleCount;
       });
+      if (statusEl) {
+        statusEl.textContent = profile === 'all'
+          ? totalVisible + ' offres affichées.'
+          : totalVisible + ' offre' + (totalVisible === 1 ? '' : 's') + ' affichée' + (totalVisible === 1 ? '' : 's') + ' pour ' + profileLabel + '.';
+      }
       // Double rAF : laisse le navigateur peindre l'état display:flex + opacity:0
       // avant de retirer la classe de fondu, sinon la transition est sautée.
       requestAnimationFrame(function () {
@@ -141,21 +150,25 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
 
-    function applyFilter(profile) {
+    function applyFilter(profile, profileLabel) {
       if (reduceMotion) {
-        showMatching(profile);
+        showMatching(profile, profileLabel);
         return;
       }
       allCards.forEach(function (card) { card.classList.add('offre-card--fade'); });
-      window.setTimeout(function () { showMatching(profile); }, FADE_MS);
+      window.setTimeout(function () { showMatching(profile, profileLabel); }, FADE_MS);
     }
 
     buttons.forEach(function (btn) {
       btn.addEventListener('click', function () {
         if (btn.classList.contains('is-active')) return;
-        buttons.forEach(function (b) { b.classList.remove('is-active'); });
+        buttons.forEach(function (b) {
+          b.classList.remove('is-active');
+          b.setAttribute('aria-pressed', 'false');
+        });
         btn.classList.add('is-active');
-        applyFilter(btn.dataset.filter);
+        btn.setAttribute('aria-pressed', 'true');
+        applyFilter(btn.dataset.filter, btn.textContent.trim());
       });
     });
   });

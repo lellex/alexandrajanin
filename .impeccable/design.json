@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-17T00:00:00Z",
+  "title": "Design System: alexandrajanin.fr",
+  "extensions": {
+    "colorMeta": {
+      "violet-aubergine": { "role": "primary", "displayName": "Violet aubergine", "canonical": "#380075", "tonalRamp": ["#14002b", "#24004d", "#380075", "#4d1a8c", "#6c35a7", "#8f5fc4", "#b899dd", "#ede6f7"] },
+      "violet-clair": { "role": "primary", "displayName": "Violet clair", "canonical": "#6c35a7", "tonalRamp": ["#24004d", "#380075", "#54209b", "#6c35a7", "#8f5fc4", "#ab82d3", "#cfb6e8", "#ede6f7"] },
+      "jaune-miel": { "role": "secondary", "displayName": "Jaune miel", "canonical": "#ffb700", "tonalRamp": ["#3d2c00", "#6b4d00", "#9a6f00", "#c98f00", "#ffb700", "#ffcd4d", "#ffe199", "#fff3cc"] },
+      "noyer": { "role": "tertiary", "displayName": "Noyer", "canonical": "#7c5522", "tonalRamp": ["#241708", "#3d2810", "#5c3f19", "#7c5522", "#a07440", "#c09a6a", "#dfc4a0", "#fef8ec"] },
+      "encre": { "role": "neutral", "displayName": "Encre", "canonical": "#1a1820", "tonalRamp": ["#1a1820", "#2e2a36", "#52495c", "#786e84", "#a29aad", "#cbc5d3", "#e9e5ee", "#fffcf4"] },
+      "creme": { "role": "neutral", "displayName": "Crème", "canonical": "#fffcf4", "tonalRamp": ["#4a4534", "#6e6749", "#948a60", "#b9ae82", "#d8cfa8", "#efe7cc", "#fff3db", "#fffcf4"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display (VG5000)", "purpose": "Titre du héros uniquement, curseur clignotant inclus." },
+      "headline": { "displayName": "Headline (VG5000)", "purpose": "Titres de section, toujours en violet aubergine." },
+      "body": { "displayName": "Body (DM Sans)", "purpose": "Texte courant 16px/1.6 ; sous-titres 1.125rem gris mauve." },
+      "label": { "displayName": "Label (IBM Plex Mono)", "purpose": "Kickers préfixés // , boutons, tags, prix, filtres." }
+    },
+    "shadows": [
+      { "name": "tampon", "value": "5px 5px 0 #fffcf4", "purpose": "Ombre dure décalée, éléments mis en avant (bloc RDV). Jamais de flou." },
+      { "name": "badge", "value": "0 2px 6px rgba(0,0,0,0.15)", "purpose": "Micro-ombre du badge nouveau, seul flou toléré à petite échelle." },
+      { "name": "focus-ring", "value": "0 0 0 3px rgba(108,53,167,0.12)", "purpose": "Anneau de focus des champs. Fonctionnel uniquement." }
+    ],
+    "motion": [
+      { "name": "ease-tampon", "value": "cubic-bezier(0.7, 0, 0.2, 1)", "purpose": "Boutons et décalages mécaniques, 0.2-0.3s." },
+      { "name": "ease-glisse", "value": "cubic-bezier(0.2, 1, 0.8, 1)", "purpose": "Entrées de menus et glissés, 0.22-0.3s." },
+      { "name": "deco-spin", "value": "linear 38s-50s infinite", "purpose": "Rotation continue des fleurs décoratives, désactivée en reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "600px" },
+      { "name": "md", "value": "700px" },
+      { "name": "lg", "value": "860px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Bouton tampon (primaire)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "CTA signature : span crème bordé qui glisse sur un socle aubergine au survol.",
+      "html": "<a href=\"#\" class=\"ds-btn-primary\"><span>Me contacter</span></a>",
+      "css": ".ds-btn-primary { background: #380075; padding: 0; border: none; border-radius: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 1rem; letter-spacing: 1px; cursor: pointer; text-decoration: none; display: inline-block; color: #380075; } .ds-btn-primary span { display: block; background: #fffcf4; padding: 0.7rem 1.5rem; border: 2px solid #380075; border-radius: 6px; transform: translate3d(-4px, -4px, 0); transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1); } .ds-btn-primary:hover span, .ds-btn-primary:focus-visible span { transform: translate3d(-7px, -7px, 0); }"
+    },
+    {
+      "name": "Bouton outline",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "CTA secondaire : fond crème sombre, texte aubergine, même géométrie sans le socle.",
+      "html": "<a href=\"#\" class=\"ds-btn-outline\"><span>Voir les offres →</span></a>",
+      "css": ".ds-btn-outline { background: #fff3db; padding: 0; border: none; border-radius: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 1rem; letter-spacing: 0.5px; cursor: pointer; text-decoration: none; display: inline-block; } .ds-btn-outline span { display: block; background: transparent; color: #380075; padding: 0.7rem 1.5rem; border-radius: 6px; transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1); } .ds-btn-outline:hover span { transform: translate3d(-3px, -3px, 0); }"
+    },
+    {
+      "name": "Pilule de filtre",
+      "kind": "chip",
+      "refersTo": "filter-pill",
+      "description": "Filtre par profil : bordure violet clair, actif en aubergine plein.",
+      "html": "<div style=\"display:flex;gap:8px\"><button class=\"ds-filter-pill is-active\">Tous les profils</button><button class=\"ds-filter-pill\">Indépendants &amp; artisans</button></div>",
+      "css": ".ds-filter-pill { font-family: 'IBM Plex Mono', monospace; font-size: 0.85rem; letter-spacing: 0.2px; padding: 0.5rem 1rem; border-radius: 9999px; border: 2px solid #6c35a7; background: transparent; color: #6c35a7; cursor: pointer; transition: background-color 0.2s, color 0.2s; } .ds-filter-pill:hover { background: #ede6f7; } .ds-filter-pill.is-active { background: #380075; border-color: #380075; color: #ffffff; } .ds-filter-pill:focus-visible { outline: 2px solid #380075; outline-offset: 2px; }"
+    },
+    {
+      "name": "Tag",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "Pilule de stack technique ; variante gold pour les technologies phares.",
+      "html": "<div style=\"display:flex;gap:6px\"><span class=\"ds-tag\">Angular</span><span class=\"ds-tag ds-tag--gold\">TypeScript</span></div>",
+      "css": ".ds-tag { font-family: 'IBM Plex Mono', monospace; font-size: 0.875rem; padding: 3px 10px; border-radius: 9999px; color: #6c35a7; background: #ede6f7; letter-spacing: 0.3px; } .ds-tag--gold { background: rgba(201, 143, 0, 0.12); color: #7c5522; }"
+    },
+    {
+      "name": "Card offre",
+      "kind": "card",
+      "refersTo": "card-offre",
+      "description": "Card bordée 2px à l'encre de sa section, fond transparent avec voile dégradé.",
+      "html": "<div class=\"ds-offre-card\"><div class=\"ds-offre-title\">Page web simple</div><p class=\"ds-offre-desc\">Une page sur mesure pour présenter votre activité.</p><div class=\"ds-offre-price\">1 350€ <span>HT</span></div></div>",
+      "css": ".ds-offre-card { background: transparent; border: 2px solid #380075; border-radius: 6px; padding: 1.6rem 1.4rem; display: flex; flex-direction: column; gap: 0.6rem; position: relative; overflow: hidden; max-width: 320px; font-family: 'DM Sans', sans-serif; } .ds-offre-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(56, 0, 117, 0.06), transparent); pointer-events: none; } .ds-offre-title { font-weight: 600; font-size: 1.1rem; color: #1a1820; } .ds-offre-desc { color: #52495c; font-size: 0.95rem; line-height: 1.6; margin: 0; } .ds-offre-price { font-family: 'IBM Plex Mono', monospace; color: #380075; font-weight: 500; margin-top: auto; padding-top: 0.7rem; border-top: 1px solid #fff3db; } .ds-offre-price span { font-size: 0.8rem; color: #52495c; }"
+    },
+    {
+      "name": "Champ de formulaire",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Bordure noyer 1px, focus violet avec anneau lilas.",
+      "html": "<input class=\"ds-input\" type=\"text\" placeholder=\"Votre nom\" />",
+      "css": ".ds-input { border: 1px solid #7c5522; border-radius: 6px; padding: 0.65rem 0.9rem; font-family: 'DM Sans', sans-serif; font-size: 1rem; color: #1a1820; background: #ffffff; transition: border-color 0.2s, box-shadow 0.2s; width: 100%; max-width: 320px; } .ds-input::placeholder { color: #52495c; } .ds-input:focus { outline: none; border-color: #6c35a7; box-shadow: 0 0 0 3px rgba(108, 53, 167, 0.12); }"
+    },
+    {
+      "name": "Kicker //",
+      "kind": "custom",
+      "refersTo": "label",
+      "description": "Label de section signature, préfixé // comme un commentaire de code.",
+      "html": "<p class=\"ds-section-label\">Prestations</p>",
+      "css": ".ds-section-label { font-family: 'IBM Plex Mono', monospace; font-size: 1rem; font-weight: 700; letter-spacing: 1.5px; color: #6c35a7; opacity: 0.8; text-transform: uppercase; margin: 0; } .ds-section-label::before { content: '// '; }"
+    },
+    {
+      "name": "Badge nouveau",
+      "kind": "custom",
+      "refersTo": "tag",
+      "description": "Badge miel légèrement incliné (2.5deg), posé sur le coin d'une card.",
+      "html": "<span class=\"ds-nouveau-badge\">Nouveau</span>",
+      "css": ".ds-nouveau-badge { display: inline-block; transform: rotate(2.5deg); font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #1a1820; background: #ffb700; border-radius: 4px; padding: 4px 9px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "L'atelier de la développeuse",
+    "overview": "Un atelier d'artisane du logiciel : des outils sérieux, des traits francs, et partout des touches personnelles assumées. La rigueur technique est visible — préfixes // en IBM Plex Mono, curseur qui clignote, bordures nettes de 2px — mais elle est réchauffée par un violet profond, un jaune miel, des fleurs vectorielles qui tournent lentement en arrière-plan et une typographie display (VG5000) au dessin singulier. Rien n'est générique : chaque page porte la même signature reconnaissable, celle d'une personne, pas d'une agence. Le système rejette explicitement l'agence web corporate, le site « IA-généré » et le fait-main qui paraît bricolé.",
+    "keyCharacteristics": [
+      "Plat et franc : bordures 2px, ombres dures sans flou, esthétique proche de la sérigraphie.",
+      "Trio typographique contrasté : VG5000 + DM Sans + IBM Plex Mono.",
+      "Palette chaude et engagée : aubergine + miel sur fonds crème, ponctuée de noyer.",
+      "Motifs floraux décoratifs en rotation lente, opacité 0.07-0.13.",
+      "Éco-conçu et accessible par principe : ce que le site vend, il le démontre."
+    ],
+    "rules": [
+      { "name": "La règle des trois encres", "body": "Chaque famille d'offres a son encre de bordure : aubergine pour le conseil, encre noire pour le logiciel, noyer pour les sites. On ne mélange pas les encres à l'intérieur d'une section.", "section": "colors" },
+      { "name": "La règle du miel rare", "body": "Le jaune miel couvre moins de 10 % de n'importe quel écran. C'est un rayon de soleil, pas un fond.", "section": "colors" },
+      { "name": "La règle du //", "body": "Le seul kicker autorisé est le label mono préfixé // (commentaire de code). C'est la signature dev du site — pas un eyebrow générique. Un par section, jamais plus.", "section": "typography" },
+      { "name": "La règle des trois voix", "body": "VG5000 pour la voix, DM Sans pour le contenu, Plex Mono pour la machine. Ne jamais faire porter à une famille le rôle d'une autre.", "section": "typography" },
+      { "name": "La règle de la sérigraphie", "body": "Pas de flou décoratif. Si une ombre apparaît, elle est soit dure et décalée (relief imprimé), soit fonctionnelle (focus, menu mobile).", "section": "elevation" }
+    ],
+    "dos": [
+      "Do utiliser le bouton tampon (socle aubergine + span crème décalé) pour tout CTA primaire ; c'est le geste signature du site.",
+      "Do respecter la règle des trois encres : aubergine (conseil), encre noire (logiciel), noyer (sites) pour bordures et accents de section.",
+      "Do écrire les labels techniques (prix, tags, filtres, kickers //) en IBM Plex Mono.",
+      "Do garder les fleurs décoratives sous 0.13 d'opacité, en aria-hidden, avec une alternative prefers-reduced-motion.",
+      "Do viser WCAG AA partout : contrastes ≥ 4.5:1 pour le texte courant, focus visibles, navigation clavier.",
+      "Do rester éco-conçu : polices auto-hébergées en woff2, SVG inline, zéro framework front, zéro tracker."
+    ],
+    "donts": [
+      "Don't ressembler à une « agence web corporate » : stock photos, jargon marketing, promesses creuses, template interchangeable.",
+      "Don't produire du « site IA-généré » : grilles de cards identiques, gradients décoratifs, héros SaaS générique, gradient text.",
+      "Don't laisser le fait-main paraître bricolé : les rotations et décalages sont calibrés (2.5deg max sur le badge), jamais aléatoires.",
+      "Don't ajouter d'ombres floues décoratives, de glassmorphism ou de glow : la règle de la sérigraphie l'interdit.",
+      "Don't utiliser le jaune miel en fond de grande surface : moins de 10 % de l'écran, toujours.",
+      "Don't introduire une quatrième famille typographique, ni faire porter à une famille le rôle d'une autre."
+    ]
+  }
+}
